@@ -1,6 +1,6 @@
 {
-  "name": "Chrome React SEO Extension",
-  "description": "The power of React and TypeScript for building interactive Chrome extensions",
+  "name": "PrivacyProtector",
+  "description": "PrivacyProtector",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
@@ -12,11 +12,20 @@
     "48": "vite.svg",
     "128": "vite.svg"
   },
+  "background": {
+    "service_worker": "background.js"
+  },
   "permissions": ["activeTab","scripting"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["logic.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "loading.html" ],
+      "matches": [ "https://*/*" ]
     }
   ]
 }

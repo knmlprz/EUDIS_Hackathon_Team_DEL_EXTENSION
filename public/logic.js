@@ -1,7 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('result').innerHTML = 'Click anywhere to see the event object';
-    document.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('result').innerHTML += e;
-    });
+document.addEventListener('click', function (e) {
+    console.log(window.location.pathname);
+    e.preventDefault();
+    console.log(e.target.getAttribute('href'));
+    chrome.runtime.sendMessage({action:"open_loading_site"});
 });
