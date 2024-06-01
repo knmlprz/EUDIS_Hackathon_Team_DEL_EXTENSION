@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import logo from '../assets/logo.svg'
 import LoadingIcon from '../components/LoadingIcon'
-import { APIScanResponse, requestScan } from '../api/api';
+import { APIScanResponse, RequestScan } from '../api/api';
 
 export default function LoadingScreen(){
     const queryParameters = new URLSearchParams(window.location.search);
@@ -10,7 +10,7 @@ export default function LoadingScreen(){
     useEffect(
         () => {
             async function fetchScan(url: string): Promise<void>{
-                const scanResponse = await requestScan(url);
+                const scanResponse = await RequestScan(url);
                 if(scanResponse.safe === undefined || scanResponse.safe){
                     window.location.href = url;
                     return
