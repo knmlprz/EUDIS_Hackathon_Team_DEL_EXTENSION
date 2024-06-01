@@ -11,5 +11,8 @@ export default function API(){
 export async function requestScan(resource_url: string){
     const response = await API().post(`/scan/`,{data: resource_url})
     return response.data as scanResponse
+}
 
+export function isUndefined(response: scanResponse): boolean {
+    return response.safe === undefined
 }
