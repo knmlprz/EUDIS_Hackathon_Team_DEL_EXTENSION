@@ -6,3 +6,18 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
     }
 });
+
+
+let pollInterval = 5000;
+
+function fetchData() {
+    chrome.tabs.query({}, function(tabs) {
+        tabs.forEach(tab => {
+            chrome.tabs.sendMessage(tab.id, { action: 'updateData', data: "Fetching data..." });
+        });
+    });
+}
+
+setInterval(fetchData, pollInterval);
+
+fetchData();

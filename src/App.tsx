@@ -5,9 +5,6 @@ function App() {
   return (
       <>
         <p>Działa</p>
-          <div id="result">
-
-          </div>
       </>
   )
 }
