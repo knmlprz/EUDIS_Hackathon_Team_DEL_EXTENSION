@@ -5,7 +5,7 @@ export type scanResponse = {
 }
 
 export default function API(){
-    return axios.create({baseURL: 'localhost:8000'})
+    return axios.create({baseURL: 'http://localhost:8000'})
 }
 
 export async function requestScan(resource_url: string){
