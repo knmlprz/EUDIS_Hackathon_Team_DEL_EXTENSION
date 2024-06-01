@@ -6,6 +6,11 @@ import axios from 'axios';
 function Load() {
 
     useEffect(() => {
+
+        fetch('/').then((response) => {
+            console.log(response);
+        });
+
         setInterval( async () => {
             try {
                 const response = await axios.post('http://localhost:8000/scan/');
