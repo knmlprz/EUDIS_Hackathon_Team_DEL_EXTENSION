@@ -3,7 +3,7 @@ import LoadingIcon from '../components/LoadingIcon'
 
 export default function LoadingScreen(){
     const queryParameters = new URLSearchParams(window.location.search)
-    const url = queryParameters.get("url")
+    const url = queryParameters.get("data")
     if(url){
         console.log(`Detected URL: ${url}`)
     }

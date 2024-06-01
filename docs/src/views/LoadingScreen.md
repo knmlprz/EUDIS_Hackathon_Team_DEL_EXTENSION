@@ -10,4 +10,4 @@ If backend responds with "unsafe" - it shows found issues.
 
 # Usage
 
-Make sure that the HTML page that has this component mounted gets requested with a `url` GET parameter (as in `(...)/loading.html?url=example.com`); that's how you pass the URL of the resource to be scanned.
+Make sure that the HTML page that has this component mounted gets requested with a `data` GET parameter (as in `(...)/loading.html?url=example.com`); that's how you pass the URL of the resource to be scanned.
