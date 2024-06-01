@@ -9,7 +9,7 @@ export default function API(){
 }
 
 export async function requestScan(resource_url: string){
-    const response = await API().get(`/scan/${resource_url}`)
+    const response = await API().post(`/scan/`,{data: resource_url})
     return response.data as scanResponse
 
 }
